@@ -407,3 +407,144 @@ rune        alias for int32
 
 
 ![image](https://user-images.githubusercontent.com/80065996/152306932-53f32849-38ce-4823-b6a9-1de959923a21.png)
+
+
+# for the first time the number of values we are appending will become length and cap
+
+
+![image](https://user-images.githubusercontent.com/80065996/152321494-782d2746-f3b7-4521-bda4-17999aafc905.png)
+
+
+# next time when u append, it will work as per cap*2 when length is exceeded
+
+
+![image](https://user-images.githubusercontent.com/80065996/152321650-a15cbde6-5ee4-49a0-b865-44cff0f3ea60.png)
+
+
+
+# struct - group of different data types combined together
+
+
+![image](https://user-images.githubusercontent.com/80065996/152322606-d2133a79-fd82-41af-a50b-8d27e10f1bdd.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/152322653-82daac09-d7d5-4b18-9a4b-5bca2926f451.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/152322721-d562a92b-2637-4834-9324-e023fed1273c.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/152322795-0aafa3c2-c538-420f-a701-7d409e12ac0a.png)
+
+
+# Embedded struct
+
+
+![image](https://user-images.githubusercontent.com/80065996/152324786-4030c0dc-0b24-46e8-8daf-d5aeff2762b6.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/152324836-bea0cbec-9880-42ec-966e-5cd3984d6687.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/152324896-37d48786-9dc9-4f06-a991-f251a01e615d.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/152325017-715e8bd9-ac12-46df-9935-bd4632bee949.png)
+
+
+# Another construct of struct without mentioning data types
+
+
+![image](https://user-images.githubusercontent.com/80065996/152325914-b0d69dc4-4585-402f-a41c-946c9507d095.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/152325985-bb653101-0f2c-4892-a188-960d2cd37714.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/152326014-7e57f0f5-64c6-4040-aa02-4fe561f4bbb1.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/152327744-2f956e98-58ba-4421-92ad-8bc1c1900bcc.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/152327772-8e576b63-8f05-4f07-921c-f149b7e7e81b.png)
+
+
+# Another syntax of using a struct
+
+
+![image](https://user-images.githubusercontent.com/80065996/152327951-89cc67da-7566-4755-88c1-b66d1061eed9.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/152327984-70bdea96-1ba3-4f04-ac7f-ae2e86fc7c13.png)
+
+
+# Ananymous struct
+
+
+![image](https://user-images.githubusercontent.com/80065996/152329371-ba81ed74-4492-435b-ac68-286dc43530c6.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/152329458-f3ce5d81-bb30-4771-8439-13a37502214d.png)
+
+
+# Data type mismatch scenarios
+# we cannot compare and do any operation even with subtypes. 
+
+
+# float32 and float64 are different
+
+
+![image](https://user-images.githubusercontent.com/80065996/152330460-35be4684-c22e-4b50-896b-3fefdbdd627f.png)
+
+
+# int32 and int8 are different. 
+
+
+![image](https://user-images.githubusercontent.com/80065996/152330531-45d828ab-53c6-482c-bc21-03c271ea1767.png)
+
+
+# conclusion := we cannot compare even subtype from main data types
+
+
+# int32 = rune, int8 -byte
+
+
+![image](https://user-images.githubusercontent.com/80065996/152330845-6ab924b1-cb2b-458a-ad01-f85fcb898a7d.png)
+
+
+
+# we cannot perform even mathematical operation (addition,subtraction,mulitplication,division) by using different data types. it will throw error
+
+
+![image](https://user-images.githubusercontent.com/80065996/152331232-24060107-2a45-4a91-84eb-f471257f0598.png)
+
+
+# Type conversion
+
+
+![image](https://user-images.githubusercontent.com/80065996/152331684-b17cf3a5-d228-46f2-b95f-0ee5c718e622.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/152331862-c3b9907b-9abc-4b54-b4ac-ac2041ba311b.png)
+
+
+# custom type vs basic primitive types -- limitation of type conversion
+
+
+![image](https://user-images.githubusercontent.com/80065996/152333164-597c66af-1aa7-4109-92e7-f441c3d3870f.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/152333195-a2c4a222-2345-4f90-ac77-9c7f0c575a9f.png)
+
+
+# type convert the custom type 
+
+
+![image](https://user-images.githubusercontent.com/80065996/152334761-6675c9d2-f501-47dc-a1ca-c6a5345ba4d4.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/152334786-df4add45-2508-4e60-8af2-a963fb883330.png)
+
+
+
