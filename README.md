@@ -248,4 +248,162 @@ rune        alias for int32
 ![image](https://user-images.githubusercontent.com/80065996/152119068-9db6a190-7eda-461f-a95d-6c3d08a5a443.png)
 
 
+# Altering slice inside another function.
 
+
+![image](https://user-images.githubusercontent.com/80065996/152289564-d6e9bd24-bdc3-4583-a9b6-c52d9a159ba2.png)
+
+
+# Result: even if you didnt returned the altered slice, the changed value will reflect in the slice data
+
+
+![image](https://user-images.githubusercontent.com/80065996/152289696-63ab1bdc-7ebe-48ef-b644-0c2c7f64a2ca.png)
+
+
+# same operation with append will not alter the slice data
+
+
+![image](https://user-images.githubusercontent.com/80065996/152289785-6f562369-cbfd-4707-9c2a-7ada32d413a1.png)
+
+
+# result:
+
+
+![image](https://user-images.githubusercontent.com/80065996/152289812-e0dbb157-6e64-4cba-891d-9b9471bb3c7f.png)
+
+
+# map altered inside another function and even if you are not returning the altered value it will get changed
+
+
+![image](https://user-images.githubusercontent.com/80065996/152290033-1ebc3673-d885-4172-8311-9435e89178dd.png)
+
+
+# result
+
+
+![image](https://user-images.githubusercontent.com/80065996/152290063-74f81a57-fb16-494f-bf55-446c0781de15.png)
+
+
+# Map + Slice operation
+
+
+![image](https://user-images.githubusercontent.com/80065996/152290485-5d693ae8-b79a-4d02-8032-38453e4038f3.png)
+
+
+# Result
+
+
+![image](https://user-images.githubusercontent.com/80065996/152290542-404a780a-238d-4552-915b-07e550d5de18.png)
+
+
+# map is unordered collection
+
+
+![image](https://user-images.githubusercontent.com/80065996/152291587-be28e92e-edce-4631-ba93-86318563204a.png)
+
+
+# if you range it we cannot be sure on which value comes first and which comes next
+
+
+![image](https://user-images.githubusercontent.com/80065996/152291697-4bd46f1d-ed15-42d6-9fa7-fa2a26ba6d85.png)
+
+
+# Deleting a value from a map
+
+
+![image](https://user-images.githubusercontent.com/80065996/152292293-a4c65b41-076b-4cb3-b8de-5ddb9929fbe1.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/152292327-f16d07c0-d117-4cba-b7e6-6f62453861e3.png)
+
+
+# Deleting value from slice -  slice of slice deleting mid value
+
+
+![image](https://user-images.githubusercontent.com/80065996/152293183-8019858d-dcd2-4ff8-bd93-8cd831f5a88f.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/152293206-8d97587e-5fee-4d15-ab42-98ec39dab139.png)
+
+
+# Multi dimensional slice
+
+
+![image](https://user-images.githubusercontent.com/80065996/152295492-286388bf-95e9-4b95-8c9a-dfaa4b7b8feb.png)
+
+
+# Result:
+
+
+![image](https://user-images.githubusercontent.com/80065996/152295539-a14c2fd6-21f6-484a-acd9-21b5809b2a31.png)
+
+
+# Under the hood processing for a slice :
+
+
+![image](https://user-images.githubusercontent.com/80065996/152298350-5355e53f-092e-4bed-b2e2-7ae63a65395e.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/152298375-eb0ff212-c3d0-4da0-b33b-e468efd3f9ea.png)
+
+
+# dont's in using slice.
+
+
+![image](https://user-images.githubusercontent.com/80065996/152298651-efbce5eb-a251-487f-ba4d-23970e4f6753.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/152298700-ce3eb2c4-91f4-4944-8a07-2ca46d71f4db.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/152298782-49263efd-edc1-4f68-9fbb-e22b2eea68d6.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/152298817-24038dbc-5bc5-4a52-85e5-ad5a70f4bd90.png)
+
+
+# Declaration of slice using Var keyword with append function works properly. but var key word with allocation of value using index will fail
+
+
+![image](https://user-images.githubusercontent.com/80065996/152298988-b81cc481-2860-414c-adc8-8144af1e5ce1.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/152299019-4b182399-3321-41cf-aac4-bd13fb3ef5d4.png)
+
+
+# len and cap scenarios
+
+
+![image](https://user-images.githubusercontent.com/80065996/152301805-b654eca5-6c0d-494c-bb61-cb2878f37ebf.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/152301843-3a8e8e55-7f41-437e-96ea-21ae2baed9d0.png)
+
+
+# in the first scenario, we are exceeding the maximum capacity of slice so new underlying array is created
+# in the second scenario, we are not exceeding the capactiy so same underlying array is used
+
+
+![image](https://user-images.githubusercontent.com/80065996/152302241-60be3885-520c-41a9-9600-7d816710ceef.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/152302271-7477d53d-c51f-47ff-a594-9330724003e3.png)
+
+
+# so slice operation purely depends on maximum capacity. so if maximum capacity exceeded new array will be created or else it used same underlying array
+
+
+![image](https://user-images.githubusercontent.com/80065996/152302507-f3cb9397-ac80-4e1b-9a3b-bb5c8309c862.png)
+
+
+
+![image](https://user-images.githubusercontent.com/80065996/152302532-66189a29-5092-4880-aa3d-0f322b7c551f.png)
+
+
+# mentioning length and cap if slice as 0
+
+
+![image](https://user-images.githubusercontent.com/80065996/152306885-e7f9a71e-f714-48ad-a28c-548c0a2572f0.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/152306932-53f32849-38ce-4823-b6a9-1de959923a21.png)
