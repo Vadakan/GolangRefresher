@@ -547,4 +547,26 @@ rune        alias for int32
 ![image](https://user-images.githubusercontent.com/80065996/152334786-df4add45-2508-4e60-8af2-a963fb883330.png)
 
 
+# Defer  - executed at the last. in case of multiple defer statement it will be exected in LIFO fashion
+
+
+![image](https://user-images.githubusercontent.com/80065996/152382224-53248fa2-1e88-4f6c-af84-9e7651f38504.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/152382265-58da9b38-1870-43cf-a346-bf2029fa5840.png)
+
+
+# 'defer' usage in panic and recover
+
+
+![image](https://user-images.githubusercontent.com/80065996/152386406-985de4ed-e121-4604-8b06-2c74f6cacd62.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/152389228-f7a526fc-ca8d-46e3-896e-a686edc1c4fb.png)
+
+
+
+# if any 'defer' function executed before any panic statement, before the panic stack trace is printed. so we can use the logic to recover the panicked program
+
+
 
