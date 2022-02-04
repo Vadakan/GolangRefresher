@@ -657,4 +657,77 @@ rune        alias for int32
 ![image](https://user-images.githubusercontent.com/80065996/152495373-0bb585b4-f666-43ce-8309-9ddfc4e90ab3.png)
 
 
+# Memory leak scenarios
+
+
+# fmt package will create memory leak issue fmt.Println(). 
+# Example
+
+
+![image](https://user-images.githubusercontent.com/80065996/152550084-60173b70-a226-4e4a-95b0-73dd216216d9.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/152550130-0d75de2a-a92d-4577-8d74-845a5357f382.png)
+
+
+# you can see "s1" escapes to heap memory
+
+
+# If golang is Garbage collected why do we need to really taking care of all these memory leaking performance considerations. 
+# Answer is even if go is garbage collected, we should not put more pressure to garbage collector to collect the unused space. 
+# if we do this, garbage collector will take more effort and time to remove unused space and thus it will slow the application performance
+
+# one of the solution instead of using 'fmt' package is default 'println' to print any values instead of 'fmt.println'
+
+# demo
+
+
+![image](https://user-images.githubusercontent.com/80065996/152551391-d8c9f4d8-bb62-4dda-9dc1-2186c5cd28a0.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/152551446-8a57d409-5170-41f7-97ba-55205fb5cabf.png)
+
+
+# gc flag command to perform the escape analysis
+
+# go build -gcflags "-m"
+
+
+# Also use of strings can be more effective if we use buffer using strings builer
+
+
+# https://go101.org/article/memory-leaking.html  - refer this link for efficient string operations
+
+
+# demo of string operation with buffer
+
+
+![image](https://user-images.githubusercontent.com/80065996/152554253-0013b04b-3351-4abc-91b6-bb656f717992.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/152554690-ddb4d6c1-9cf5-42e6-887f-edd4b97f48a8.png)
+
+
+# Note: if we use interface it will be stored in heap we cannot avoid that. Interface will always store in heap
+
+# copy function reference : https://yourbasic.org/golang/copy-explained/
+
+
+# Slice - what happend under the hood ?
+# when we do slice operation within its length then underlying array will remain the same. 
+# when we exceeeds the maximum capacity of slice, then it will grow := grow in the sense, new underlying array will be created and it will copy the old date
+# to the new array and starts updating the extra value into new array. this is how slice grows. new array creation will be of formula cap*2
+
+
+# copy function should be used only in the scenarios where your underlying array will not get altered
+
+
+![image](https://user-images.githubusercontent.com/80065996/152578811-61a8e35e-517d-48fd-9bbf-5772a2ea60c8.png)
+
+
+# we have to harcode the legnth and cap in destination slice then only copy() function will work
+
+
+
+
 
