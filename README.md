@@ -569,4 +569,92 @@ rune        alias for int32
 # if any 'defer' function executed before any panic statement, before the panic stack trace is printed. so we can use the logic to recover the panicked program
 
 
+# recovering the panicked function instead of abending and printing stack trace
+
+
+![image](https://user-images.githubusercontent.com/80065996/152483410-541d3edd-8b8c-4186-866e-0903586ef43e.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/152483448-2cdf677a-6c45-4fe5-b8c5-c342abe42627.png)
+
+
+# Simple method creation using custome data type with underlying primitive data type
+
+
+![image](https://user-images.githubusercontent.com/80065996/152484899-deacd580-7dfd-46e5-afb1-98db51c121d8.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/152484920-332ecde1-6947-4ef9-823d-d1e0b6387913.png)
+
+
+# Method concept with struct - non pointer object case
+
+
+![image](https://user-images.githubusercontent.com/80065996/152489898-2e769447-4e04-42b6-abdf-d394284b4b24.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/152489916-b43022a2-7efa-4b5b-b0db-62df726894eb.png)
+
+
+# Method concept with struct - pointer scenario
+
+
+![image](https://user-images.githubusercontent.com/80065996/152490023-74c88d58-398c-4479-95af-82b27e2d59cd.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/152490242-1651f71a-68b1-4247-99d9-835947689711.png)
+
+
+# altering the value of object by using method and pointers
+
+
+![image](https://user-images.githubusercontent.com/80065996/152492345-3f671686-e12b-4f1f-a7ca-aeb356ea27c4.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/152492370-5b5529e3-a5a9-4757-b709-6bcfe828e794.png)
+
+
+# passing value from non pointer to pointer method
+
+
+![image](https://user-images.githubusercontent.com/80065996/152492701-90c27d4e-5fea-4116-9f41-44d049e5cdff.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/152492729-e87e38ca-7067-47d5-a404-0fe900977458.png)
+
+
+# passing value from non-pointer to non-pointer
+
+
+![image](https://user-images.githubusercontent.com/80065996/152492808-4c98b402-b24a-414a-844d-91e17d0b6ea2.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/152492840-e04b7eeb-f682-4c3d-8d45-26da0c1b527f.png)
+
+
+# passing pointer to non-pointer method
+
+
+![image](https://user-images.githubusercontent.com/80065996/152493113-2c810529-9153-425d-8477-e330db9054aa.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/152493146-6c450747-8f86-4133-991b-76764c3a2cc6.png)
+
+
+# Total method operation expectation
+# Recieving method should be having pointer reciever in order to make any change to object created for a struct datatype
+
+
+![image](https://user-images.githubusercontent.com/80065996/152493961-eaaa6709-4c9f-43fb-bd6d-4ed33f29108a.png)
+
+
+# calling method from another method
+
+
+![image](https://user-images.githubusercontent.com/80065996/152495319-73783ec1-d7f5-4029-b08c-53bb95b31168.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/152495373-0bb585b4-f666-43ce-8309-9ddfc4e90ab3.png)
+
+
 
