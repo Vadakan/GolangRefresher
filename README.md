@@ -881,3 +881,32 @@ rune        alias for int32
 ![image](https://user-images.githubusercontent.com/80065996/152686702-4c64d5a7-960c-40eb-8ec8-8f4491a5c000.png)
 
 
+# Json tag in struct
+
+
+![image](https://user-images.githubusercontent.com/80065996/152690563-e60a9527-a190-4508-9308-125d6331baeb.png)
+
+
+# Result:
+
+
+![image](https://user-images.githubusercontent.com/80065996/152690577-b6c2f376-0caf-4a9e-a427-49ecfc3ac502.png)
+
+
+#   JSON encoder and decoder reference link : https://medium.com/what-i-talk-about-when-i-talk-about-technology/go-code-snippet-json-encoder-and-json-decoder-818f81864614
+
+
+# Json Encoder := sending reponse to client from server in form of JSON 
+# Json Decoder := Decode the request "body" we sent via postman and store it in golang struct inside the server
+
+
+# Avoid ioutil.Readall refer :=  https://haisum.github.io/2017/09/11/golang-ioutil-readall/
+
+
+# Buffers in golang
+
+
+# reference link := https://www.educba.com/golang-buffer/
+
+
+
