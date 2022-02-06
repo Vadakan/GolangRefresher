@@ -729,5 +729,25 @@ rune        alias for int32
 
 
 
+# interface - polymophism - type assertion (run time datatype check for interface) - interface passed as parameter to a function
+
+
+![image](https://user-images.githubusercontent.com/80065996/152670141-09b83f2d-e907-433e-9919-35cb189d947f.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/152670151-55b200cb-3f5a-43a4-853f-a59aa7840361.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/152670159-f401bfcf-35c7-495e-8f48-38dc320a9018.png)
+
+
+# Result:
+
+
+![image](https://user-images.githubusercontent.com/80065996/152670174-4a302efb-15ea-46d3-8753-12d9cdf91c56.png)
+
+
+# we can use type assertion only inside of 'switch' case statement. we cannot use it outside of switch case statement
+
 
 
