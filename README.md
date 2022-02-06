@@ -801,4 +801,83 @@ rune        alias for int32
 ![image](https://user-images.githubusercontent.com/80065996/152673057-f79912aa-145f-4149-b6b9-0939d71cf5e6.png)
 
 
+# JSON marshal - converting golang structure to JSON - below is simple Example
+
+
+![image](https://user-images.githubusercontent.com/80065996/152684024-1bfe0488-a6e7-4d48-b2ac-7ca8a2c76e37.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/152684044-36fdb0a5-2a3b-40e3-ab40-e09000b90861.png)
+
+
+# slight complex example,
+
+
+![image](https://user-images.githubusercontent.com/80065996/152685009-21b611b8-89f3-4d1e-a26f-94acaacdeb3b.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/152685024-7b55e267-57fb-4419-aa7e-9db22883a0bd.png)
+
+
+# Result:
+
+
+![image](https://user-images.githubusercontent.com/80065996/152685049-9c05090b-955a-434e-8e09-06753a1945ec.png)
+
+
+# Another example of JSON Marshal
+
+
+![image](https://user-images.githubusercontent.com/80065996/152685490-6efc7a79-f9fa-4a77-9c65-8579002555cc.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/152685500-e57cd93c-532a-4fe2-a353-f5b3ead2bbb6.png)
+
+
+# Result:
+
+
+![image](https://user-images.githubusercontent.com/80065996/152685513-ae98122c-b655-4ffb-a9ce-59e09d2e63ee.png)
+
+
+# Json Unmarshal - converting from JSON to Golang struct
+
+
+# We can always use the website link to convert Json to Golang struct
+
+# link for the website whic supports conversion : https://mholt.github.io/json-to-go/
+
+
+![image](https://user-images.githubusercontent.com/80065996/152686018-a4e0b397-30d6-4e40-bdec-20992ec94835.png)
+
+
+# Always paste the JSON without any spaces to get Golang struct. we got the struct structure of Golang
+
+
+![image](https://user-images.githubusercontent.com/80065996/152686267-be282ecc-60cc-43e1-91f9-26045f6fe03c.png)
+
+
+# result: we got golang struct
+
+
+![image](https://user-images.githubusercontent.com/80065996/152686338-3a7202c6-45df-4c72-8517-d53e93a613d0.png)
+
+
+# For Unmarshal - we can use map of key as 'string' type and value as 'empty interface' type instead of struct to achieve the same result
+
+
+![image](https://user-images.githubusercontent.com/80065996/152686598-c5658f1c-d55b-4c7c-9399-1c43d0617215.png)
+
+
+# result: Instead of struct everything converted to a map
+
+
+![image](https://user-images.githubusercontent.com/80065996/152686727-661933a0-500b-4de1-98cc-37508e419e6e.png)
+
+
+# putting the result in Notepad with indendation for clear view of result
+
+
+![image](https://user-images.githubusercontent.com/80065996/152686702-4c64d5a7-960c-40eb-8ec8-8f4491a5c000.png)
+
 
