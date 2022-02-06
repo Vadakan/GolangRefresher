@@ -750,4 +750,55 @@ rune        alias for int32
 # we can use type assertion only inside of 'switch' case statement. we cannot use it outside of switch case statement
 
 
+![image](https://user-images.githubusercontent.com/80065996/152670833-65b03fe8-c23d-4c83-9ca2-af540e4e0800.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/152670838-9fd06e36-f93f-487f-b16e-d821381dab52.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/152670917-115e0eb0-7bcd-476c-9e54-4d4e927f4cee.png)
+
+
+
+# interface variable 'a' is assigned with object 'p1' of class 'person' which implements interface 'human'.
+# we can check the type of interface by using 'fmt.Printf' we cannot use type assertion outside of 'switch' construct
+
+
+![image](https://user-images.githubusercontent.com/80065996/152670934-8b41a479-d28e-4b0f-8c55-ce38a876dd6d.png)
+
+
+# notice when use type assertion outside of 'switch' construct, it throws the error
+
+
+![image](https://user-images.githubusercontent.com/80065996/152671336-9e90c604-cfe0-47fe-9576-b45a092813cb.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/152671376-9fbbcf50-815a-477e-a2e7-6e2f8660afc4.png)
+
+
+# pointers
+
+# pointer is the placeholder for storing address of another variable
+
+# How pointer is working - see below diagram
+
+
+![image](https://user-images.githubusercontent.com/80065996/152673010-9e475fe2-1949-47ed-bd02-aa1fc3ce3b5c.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/152673017-e8d2b0b4-549b-4529-94c6-4f6fdbe08849.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/152673033-1a774f5b-718a-42de-93ac-f067d38ccdf2.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/152673047-a645e22b-4f44-4ddc-ac5a-fbc6cc548fa4.png)
+
+
+# result:
+
+
+![image](https://user-images.githubusercontent.com/80065996/152673057-f79912aa-145f-4149-b6b9-0939d71cf5e6.png)
+
+
 
