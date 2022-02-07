@@ -1179,4 +1179,39 @@ rune        alias for int32
 
 
 
+# Buffered channels - no blocking untill the length of the buffer is 5
+
+
+![image](https://user-images.githubusercontent.com/80065996/152832848-db7bb3dc-c0c4-4e36-a85c-0d101960d6eb.png)
+
+
+# Result:
+
+
+![image](https://user-images.githubusercontent.com/80065996/152832925-85c7980c-f9c3-4f2d-a2a3-ddcaa0ddacaf.png)
+
+
+# Another example, buffer length less but iteration is more
+
+
+![image](https://user-images.githubusercontent.com/80065996/152834125-6c9305c9-e285-4436-ade4-8a5392e8d525.png)
+
+
+# Result: till buffer length(5), we dont have any blocking calls, after that its a normal blocking call
+
+
+![image](https://user-images.githubusercontent.com/80065996/152834176-d7c0f849-3f3b-4358-bba2-76af6baa28fa.png)
+
+
+# Simple example of closing channel and reading the closed channel
+
+
+![image](https://user-images.githubusercontent.com/80065996/152839833-6d834c7f-a9c6-42af-97d4-ffb1e510fd70.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/152840811-57f8db70-0487-43b8-a736-3a2fe1cdd017.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/152840878-fa8d6a75-4879-4175-83df-96181bf20fc7.png)
+
 
