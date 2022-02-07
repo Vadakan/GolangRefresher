@@ -909,4 +909,219 @@ rune        alias for int32
 # reference link := https://www.educba.com/golang-buffer/
 
 
+# Buffer examples.
+
+
+![image](https://user-images.githubusercontent.com/80065996/152746356-4ce789b3-4eae-494e-949d-61f85b5ed34f.png)
+
+
+# Result:
+
+
+![image](https://user-images.githubusercontent.com/80065996/152746386-79c545e1-e3c0-4319-8bcc-2256508fc1d4.png)
+
+
+# creating a buffer - we need to use bytes.buffer package 
+# var strbuffer bytes.Buffer
+
+# writing to the buffer
+
+# strbuffer.WriteString("Hai")   //writing a string to buffer
+# strbuffer.WriteString(" ")     // writing another string to buffer
+# strbuffer.WriteString("Hello") //writing another string to buffer
+# strbuffer.WriteString(" ")     //writing another string to buffer
+# strbuffer.WriteString("How")   //writing another string to buffer
+
+
+# printing out values from buffer := fmt.Println("output from buffer :", strbuffer.String())
+
+
+# we can reset the buffer after using it. if we did not reset the buffer, the contents will remain in there in the buffer. 
+# also it depends on the use case whether to clear the contents of the buffer after using it. for clearing we need to check the use case
+
+
+![image](https://user-images.githubusercontent.com/80065996/152749559-4efcc94c-1a5f-4503-aef8-2659484efcab.png)
+
+
+# Result:
+
+
+![image](https://user-images.githubusercontent.com/80065996/152749612-ac2a476e-4171-46a8-8aed-667445999908.png)
+
+
+# length of the string identification
+# we have to do with utf8 package
+
+
+![image](https://user-images.githubusercontent.com/80065996/152750611-0666e19b-6038-4b31-ac72-50dc3824d3c4.png)
+
+
+# Result:
+
+
+![image](https://user-images.githubusercontent.com/80065996/152750657-9ca90007-8245-4520-a6a0-f07a43fc414c.png)
+
+
+# Limitation in identifying the length of the string using len() method.
+
+
+![image](https://user-images.githubusercontent.com/80065996/152751421-bba5af63-e13b-446f-93aa-8f658c1b3820.png)
+
+
+# use any of the above symbol in our string and check the length using len() method
+
+# first check with UTF8 package
+
+
+![image](https://user-images.githubusercontent.com/80065996/152751790-05e3938c-272c-4eec-b3d5-f484100cf032.png)
+
+
+# Result: UTF8 counted correctly
+
+
+![image](https://user-images.githubusercontent.com/80065996/152751714-d461afee-7730-48c3-8fec-6edbea1ed049.png)
+
+
+# using len() methood which gives number of bytes string is occupying
+
+
+![image](https://user-images.githubusercontent.com/80065996/152752473-d22b5f55-36f7-446c-b400-ead09c9bb6e4.png)
+
+
+# result:
+# instead of 2 it gave 4 bytes because symbol occupy 4 bytes in the string
+
+
+![image](https://user-images.githubusercontent.com/80065996/152752578-a3ade46f-ebd7-4aca-9c97-b06ac0674ddb.png)
+
+
+# result:
+
+
+![image](https://user-images.githubusercontent.com/80065996/152753255-cff98628-0b3f-4a62-b47e-1a442102b3a5.png)
+
+
+
+# so to find length of the string we need to use utf8.RuneCountInString() function.
+# to finf number of bytes in a string, we need to use len() function
+
+# STRING IS MADE UP OF NUMBER OF UNICODE RUNES
+
+
+![image](https://user-images.githubusercontent.com/80065996/152754987-7e590daf-a76a-4764-a6a0-273047e6019a.png)
+
+
+# result: you can see utf8 encoded unicode values for runes below as part of resul
+
+
+![image](https://user-images.githubusercontent.com/80065996/152755015-c6658732-c5ee-4145-aca2-769572fec3b9.png)
+
+
+# since we can see only utf8 unicoded values, how to see string values?
+# type convert it while printing similar to below
+
+
+![image](https://user-images.githubusercontent.com/80065996/152756058-3c49daf1-cc6e-42f1-b802-283ffa795617.png)
+
+
+# result:
+
+
+![image](https://user-images.githubusercontent.com/80065996/152756105-e3040cd1-4954-4a05-a87f-fcfc46745a03.png)
+
+
+# efficient string operation in golang
+# strings are immutable in golang
+
+
+![image](https://user-images.githubusercontent.com/80065996/152760275-706e0b9c-92dc-40c3-a7bf-eb3fc05e2931.png)
+
+
+# below example indicates we can re-assign the string but we cannot mutate the value using index operations
+
+
+![image](https://user-images.githubusercontent.com/80065996/152761096-c122e94a-0371-4bfc-863a-92b519c74fff.png)
+
+
+# Result:
+
+
+![image](https://user-images.githubusercontent.com/80065996/152761132-0de755fe-f1c4-4065-be00-01e9b45bd61b.png)
+
+
+# Inefficient way of concatenating the string
+
+
+![image](https://user-images.githubusercontent.com/80065996/152763151-5f8cb320-bea5-45d5-8855-a7ae972fe99e.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/152763176-6f5a23e6-b8c0-4d05-ad3e-65bf4c66903f.png)
+
+
+# same example in more efficient way using buffer
+
+
+![image](https://user-images.githubusercontent.com/80065996/152766127-0938e674-fc66-4878-817c-bf97124c3f76.png)
+
+
+# result:
+
+
+![image](https://user-images.githubusercontent.com/80065996/152766169-1bd72ffb-d665-4c36-900d-0541313acce5.png)
+
+
+# Tip : unless you find real problem in performance then dont do all these things on efficiency part
+
+
+# Channels
+
+
+![image](https://user-images.githubusercontent.com/80065996/152768246-91d38efb-f956-436d-9537-71ea1cc729cc.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/152768269-9504efb9-fe00-4758-999e-0c116172aac0.png)
+
+
+# dont's in channel
+# we should not use variable of type channel and perform operations with it like below. it will throw 'nil' channel issue
+
+
+![image](https://user-images.githubusercontent.com/80065996/152769211-622578d3-bdd7-47f1-9b7f-de304da2833f.png)
+
+
+# Result issue
+
+
+![image](https://user-images.githubusercontent.com/80065996/152769251-d6179a5b-fc56-41c9-8674-1f66f6837bb7.png)
+
+
+# solution - how to avoid this -- use 'make' function always for channel
+
+
+![image](https://user-images.githubusercontent.com/80065996/152770265-6f89075d-400b-47bc-8dbb-0bd8da3800d7.png)
+
+
+# Result: worked fine
+
+
+![image](https://user-images.githubusercontent.com/80065996/152770309-07b430c6-a2f1-4e44-8d6f-ea39b0b348da.png)
+
+
+# Another multiple go routine example
+
+
+![image](https://user-images.githubusercontent.com/80065996/152771557-c0c9a637-cecf-4d93-82f4-03bd43a1814b.png)
+
+
+# Result:
+
+
+![image](https://user-images.githubusercontent.com/80065996/152771994-d2b4ab0d-c3de-47ad-b3a4-0d559d4675c9.png)
+
+
+
+
+
+
+
 
