@@ -1120,7 +1120,62 @@ rune        alias for int32
 
 
 
+# Wait groups - waitgroup waits for number of go-routines to finish. we can use this instead of channels
 
+
+![image](https://user-images.githubusercontent.com/80065996/152810936-f7830dda-dcb2-4ef2-bd3d-e4d66d9aa9cf.png)
+
+
+# Result:
+
+
+![image](https://user-images.githubusercontent.com/80065996/152811002-d5ab0d14-c1a0-4a17-99fa-354b54b51a56.png)
+
+
+#  Race condition check
+# When Race condition will occur ? common shared variable will be accessable by many go routines. we will not be really sure which go routines runs first and last
+# so we will get unexpected result
+
+
+![image](https://user-images.githubusercontent.com/80065996/152812411-21a3859f-88a4-4d14-a163-6d649731404c.png)
+
+
+# Result:
+
+# you can see value of shared variable gets unexpected results everytime. 
+
+
+![image](https://user-images.githubusercontent.com/80065996/152812655-c83dda7c-93eb-45a6-a369-8a75907a768e.png)
+
+
+# command to identify race condition
+
+
+# Solution := mutex lock and atomic 
+
+# Mutex lock
+
+
+![image](https://user-images.githubusercontent.com/80065996/152813922-192048de-8236-4657-b8ab-d65995442a11.png)
+
+
+# Result: Now result is perfectly good regardless of how many times we have run the code as shown below.
+
+
+![image](https://user-images.githubusercontent.com/80065996/152813988-1c77c46e-580c-41a5-8ebc-ec0061bc1ebf.png)
+
+
+
+# Atomic - usage by example - note - we have explicit about type with respect to computer architecure - int,int64,uint,uint64
+
+
+![image](https://user-images.githubusercontent.com/80065996/152816510-19d74cc0-7006-4aca-a955-d1a6908474ac.png)
+
+
+# Result:
+
+
+![image](https://user-images.githubusercontent.com/80065996/152816568-e4cf22d5-2352-4d4c-9909-74e632a5c4d7.png)
 
 
 
