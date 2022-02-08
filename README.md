@@ -1215,3 +1215,127 @@ rune        alias for int32
 ![image](https://user-images.githubusercontent.com/80065996/152840878-fa8d6a75-4879-4175-83df-96181bf20fc7.png)
 
 
+# Range in the channel. We have to have only 1 return for range in go.
+# Also in Range construct, it will keep on ranging the channel till we manually close the channel or else we will get deadlock issue
+
+
+![image](https://user-images.githubusercontent.com/80065996/152931027-4c0b7b5c-738f-43d6-a1b1-12f0f0398777.png)
+
+
+# result:
+
+
+![image](https://user-images.githubusercontent.com/80065996/152931067-523be866-0e25-46ab-a323-e64b6c85125c.png)
+
+
+# 'Select' construct in listening to multiple channels
+
+
+![image](https://user-images.githubusercontent.com/80065996/152933009-d31279ea-721a-47b2-8b8b-4adf767eaa46.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/152933045-a0856cab-7d1e-4de9-a17d-720f07b0f20f.png)
+
+
+# Result
+
+
+![image](https://user-images.githubusercontent.com/80065996/152933082-d1173f6c-48b4-4835-9b22-1e9c0f5abeac.png)
+
+
+
+# by using 'quit' channel of type boolean with 'select' construct. Note here we didnt close the odd and even channels instead of we used 'return' statement in
+# select construct to break the loop
+
+
+![image](https://user-images.githubusercontent.com/80065996/152942153-4fb7d130-8022-4ea0-97b9-15d9fe73c78f.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/152942210-f1939a4c-a27b-42b0-8864-a4bdfd9962cd.png)
+
+
+# Result:
+
+
+![image](https://user-images.githubusercontent.com/80065996/152942247-b24c4d15-452f-4b75-99d8-b52ebf6766dd.png)
+
+
+
+# Selective send and recieve in go routines
+
+
+![image](https://user-images.githubusercontent.com/80065996/152947668-a946d53a-3095-40d8-994b-dda4bce94d19.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/152947723-0f479266-01a5-41c9-8ac2-59d98e74bc92.png)
+
+
+# Result:
+
+
+![image](https://user-images.githubusercontent.com/80065996/152947771-fc37c3ba-827d-475d-af18-9074111f43de.png)
+
+
+# another example of selective send and recieve
+
+
+![image](https://user-images.githubusercontent.com/80065996/152951500-13c53266-6950-4ed3-a5ef-c322144d87d9.png)
+
+
+# result:
+
+
+![image](https://user-images.githubusercontent.com/80065996/152951570-2c9f0cb1-abb4-490e-9788-87373367c557.png)
+
+
+# note: whenever you have infinite for loop with select construct - use 'return' statement to terminate
+# properly kill go routines using semaphore method - 'quit' channel method
+# we should not leave leaky go routines 
+
+
+# another example of Go routine
+
+
+![image](https://user-images.githubusercontent.com/80065996/152959595-4091897c-8048-47df-b07f-9fe047f82f2e.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/152959631-c4aa00aa-7edd-4d0b-a6cb-4779ef65de8e.png)
+
+
+# result:
+
+
+![image](https://user-images.githubusercontent.com/80065996/152959686-6bae2b5b-88bb-49d9-bd87-e18f161f0285.png)
+
+
+# Enahncing the above example,
+
+
+![image](https://user-images.githubusercontent.com/80065996/152961575-fce03881-8ae3-407c-9d33-cc35d25ece13.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/152961768-bc656bd0-b6aa-4861-a6d7-df10feee14be.png)
+
+
+# result:
+
+
+![image](https://user-images.githubusercontent.com/80065996/152961834-b7b67b31-3797-4737-bc4f-639aab711dd2.png)
+
+
+# Fanout scenario
+
+
+![image](https://user-images.githubusercontent.com/80065996/152980112-2f081c8c-6c4b-44ac-becf-88f4e344ffb6.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/152980168-e8d2707c-0635-4459-b1ee-944055f245ea.png)
+
+
+# Result:
+
+
+![image](https://user-images.githubusercontent.com/80065996/152980209-bcd41445-3253-454f-81cf-407913621136.png)
+
+
+
