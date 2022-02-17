@@ -1338,4 +1338,159 @@ rune        alias for int32
 ![image](https://user-images.githubusercontent.com/80065996/152980209-bcd41445-3253-454f-81cf-407913621136.png)
 
 
+# CONCEPT - CONTEXT = ALWAYS PERFORM CONTEXT RELATED LOGIC INSIDE THE FUNCTION YOU ARE GOING TO CANCEL IN CERTAIN TIME OR DEADLINE
+# Type 1 := Context with timeout 
+
+
+![image](https://user-images.githubusercontent.com/80065996/154407700-442b4fe7-cc91-4f44-9ac6-ec164dcd53fa.png)
+
+
+# The above logic is the positive case, the function calculate will complete all its functions within 3 seconds which is the limit we have passed to the function.
+# so this function will get completed without any issue
+# Result:
+
+
+![image](https://user-images.githubusercontent.com/80065996/154407991-97e0bd54-2d38-4f7d-b05a-dba3865e679d.png)
+
+
+# Lets see the negative sceanrio where the function is getting executed more than 3 seconds
+
+
+![image](https://user-images.githubusercontent.com/80065996/154408518-628eac2f-4d88-49fb-8f9f-458d7422a8e9.png)
+
+
+# result:
+
+
+![image](https://user-images.githubusercontent.com/80065996/154408543-a191e53a-baf9-4672-9ffc-a83f2e64f4c3.png)
+
+
+# Notes: Ctx.Done() will get executed when deadline or timeout limit is completed. you can notice we are not using infinite 'For loop' in the select 
+# statement. this select statement will execute only once. so either it wait for ctx.done or the channel we are using in our program. 
+# so if context timeout exceeded, it throws errors. if context time not execeeded, the other case statements gets execute and the function will become success
+
+
+# CONTEXT :=  the main usage of context is 'cancellation' and 'propagation'.
+# for example := if you are ordering me to preare a sandwich, i need to buy bread, tomaotes, eggs and all those stuff. But i need the sandwich in 15 mins or else order
+# will be cancelled. so sometimes, i will ask someone to buy tomotaoes and other people to buy eggs, so if the order is cancelled, then i need to pass the same cancel
+# order to the person i have sent to shop to buy tomotoes and eggs. this is called cancellation and propagation
+
+
+![image](https://user-images.githubusercontent.com/80065996/154421448-1e28f992-c5b4-4f6e-a4c0-9ce30bfcc262.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/154421466-585f3852-fa94-40c1-a115-938bcf9f1af0.png)
+
+
+# Instead of 'Go routine' commented in the program, we can use 'AfterFunc' function from 'time' package so that after certain time mentioned the context will be cancelled
+
+
+![image](https://user-images.githubusercontent.com/80065996/154421984-fc8649d2-9414-4733-bc95-c7a9ddc9c81b.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/154422897-8a1f8f05-9db9-4033-9ae4-f0242e81ecea.png)
+
+
+# so we now see 4 ways we can use context, 
+# 1) Background, withtimeout, withcancel, withdeadline
+
+
+# Timeout context without 'defer' for 'cancel()' func
+
+
+![image](https://user-images.githubusercontent.com/80065996/154424780-025e2e3c-dbe0-4052-8bd8-ec4058543d8e.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/154424896-302c5ac3-5996-4fa7-96a4-97cb9102fd04.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/154425665-d06cfe89-7d62-4836-9512-7052541059a9.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/154425683-e128a054-67a1-4a3f-b468-655ee85049e8.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/154425777-f2e8456e-7da0-460f-b7b8-4dd86af174a3.png)
+
+
+![image](https://user-images.githubusercontent.com/80065996/154425793-c17e318f-6090-4dd8-a816-8d07d40a3cc4.png)
+
+
+# real time client and server example
+# We are going to create a simple server with 1 handler. Inside the handler we are going to check get the context by using 'ctx := r.Context()'
+# and using 'select' construct, we can print the message 'hello' after 10 seonds in one of the case and in other case we can terminate the function when client send
+# cancellation request. With this example we understand that when client sends cancellation, the handler will get stopped automatically by checking the context
+
+# Server code
+
+
+![image](https://user-images.githubusercontent.com/80065996/154435502-50bcd29e-9bc2-4053-a05d-d983f4da0ac9.png)
+
+
+# Client code
+
+
+![image](https://user-images.githubusercontent.com/80065996/154435563-1065613d-c57f-45f4-b486-27cae6b0c0e1.png)
+
+
+# Starting the server
+
+
+![image](https://user-images.githubusercontent.com/80065996/154435993-bcfe535a-26d3-40a6-a0e8-ee8902035259.png)
+
+
+# Server is runing in port 9090 in localhost
+# hitting the server using 'client' code
+
+
+![image](https://user-images.githubusercontent.com/80065996/154436183-3467f38c-3d3a-4707-bf6b-2d6126090776.png)
+
+
+# when client is running we pressed (ctrl+c) and cancelled the request to the server.
+
+
+![image](https://user-images.githubusercontent.com/80065996/154438529-23414304-1118-43ce-9de0-a9fb3e581dba.png)
+
+
+# you can notice our cancel signal is noticed by context and ended the handler using 'ctx.Done()' function 
+
+
+![image](https://user-images.githubusercontent.com/80065996/154438614-f22e68c1-198d-4d5e-8298-cec6cb78f656.png)
+
+
+# Note: The above example used context which is of default in built one. Now are going to see how to send context via client and use it in handler inside the server
+# Altered the client code to accomodate sending the context. split the 'http.get()' function into 2 separate functions 'http.NewRequest()' and 'http.Defaultclient.Do()'
+
+
+![image](https://user-images.githubusercontent.com/80065996/154446240-519532df-9b76-4618-a11d-a39f9080f94f.png)
+
+
+# server code. Handler will display the messsage hello after 10 seconds. But the context will end in 5 seconds since we have set the limitation of context as 5 seconds.
+
+
+![image](https://user-images.githubusercontent.com/80065996/154447905-6e0269f4-6d1c-4551-b915-d11af5d8634c.png)
+
+
+# Starting the server
+
+
+![image](https://user-images.githubusercontent.com/80065996/154448029-2578a3c9-2f5c-4d7c-b12f-a817623cf543.png)
+
+
+# Open the another terminal and running the client. you can see after 5 seconds client stopped and throwed the error saying 'context timing exceeded'
+
+
+![image](https://user-images.githubusercontent.com/80065996/154448397-81f33a4e-19fe-4525-bcda-2593415ccbff.png)
+
+
+# checking the display statements from server side. we can see 'ctx.Done()' executed after the context limit of 5 seconds and handler function ended.
+
+
+![image](https://user-images.githubusercontent.com/80065996/154448747-f6bea9c4-5713-4a53-aaeb-4a1329553586.png)
+
+
+# Note: Universal rule for using context
+# 1) context can only be used for only request scoped values (values available uniquely with each client request).
+# example : Context with 'withvalue' will be rarely used
+
 
